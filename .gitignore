@@ -1,3 +1,6 @@
+# Bến môi trường
+.env
+
 # Logs
 logs
 *.log

@@ -6,13 +6,15 @@ import { ParseServer } from 'parse-server';
 import path from 'path';
 const __dirname = path.resolve();
 import http from 'http';
+import {} from 'dotenv/config';
 
 export const config = {
   databaseURI:
-  process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb+srv://thanh:gpK5MgMsYNzZPJ@cluster0.gbbzw.mongodb.net/?retryWrites=true&w=majority'||'mongodb://localhost:27017/dev',
+  process.env.DATABASE_URI || process.env.MONGODB_URI ,
+  //process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
-  masterKeyIps: ['0.0.0.0/0'],
+  //masterKeyIps: ['0.0.0.0/0'], //Trên Heroku thì cần cái này, còn mày local thì không cần (chưa hiểu là gì)
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse', // Don't forget to change to https if needed
   liveQuery: {
