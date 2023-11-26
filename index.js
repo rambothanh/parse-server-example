@@ -9,7 +9,7 @@ import http from 'http';
 
 export const config = {
   databaseURI:
-    process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://localhost:27017/dev',
+  process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb+srv://thanh:gpK5MgMsYNzZPJ@cluster0.gbbzw.mongodb.net/?retryWrites=true&w=majority'||'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKeyIps: ['0.0.0.0/0'],
